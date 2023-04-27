@@ -27,3 +27,45 @@ blockchain = [
 # Anthony's KelloggCoin balance is 2650
 
 # 👇👇👇 Your code HERE 👇👇👇
+
+#create variables
+
+bens_balance = 0
+brians_balance = 0 
+evans_balance = 0
+anthonys_balance = 0
+
+#loop through hash and transactions
+
+for transaction in blockchain
+  #each txs in the array is a hash
+  #if the user is the "from_user", decrement their balance
+  if transaction ["from_user"] == "ben"
+    bens_balance = bens_balance - transaction ["amount"]
+  elsif transaction["from_user"] == "brian"
+    brians_balance = brians_balance - transaction["amount"]
+  elsif transaction["from_user"] == "evan"
+    evans_balance = evans_balance - transaction["amount"]
+  elsif transaction["from_user"] == "anthony"
+    anthonys_balance = anthonys_balance - transaction["amount"]
+  end
+
+#if the user is the "to_user", increment their balance
+  if transaction["to_user"] == "ben"
+    bens_balance = bens_balance + transaction["amount"]
+  elsif transaction["to_user"] == "brian"
+    brians_balance = brians_balance + transaction["amount"]
+  elsif transaction["to_user"] == "evan"
+    evans_balance = evans_balance + transaction["amount"]
+  elsif transaction["to_user"] == "anthony"
+    anthonys_balance = anthonys_balance + transaction["amount"]
+  end
+end
+
+#print out results
+
+puts "Ben's KelloggCoin balance is #{bens_balance}"
+puts "Brian's KelloggCoin balance is #{brians_balance}"
+puts "Evan's KelloggCoin balance is #{evans_balance}"
+puts "Anthony's KelloggCoin balance is #{anthonys_balance}"
+
